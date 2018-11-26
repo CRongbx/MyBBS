@@ -107,8 +107,9 @@ bool BBS::DeleteBoard(Board * b)
 {
 	cout << "É¾³ý°æ¿é£º" << endl;
 
-	for (auto bo : boards) {
-		if (b == bo) {
+	for (vector<Board*>::iterator it = boards.begin();it != boards.end();it++) {
+		if (b == (*it)) {
+			boards.erase(it);
 			if (!b)
 				delete b;
 			cout << "É¾³ý³É¹¦£¡" << endl;
