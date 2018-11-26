@@ -11,7 +11,7 @@ Administator::~Administator()
 {
 }
 
-bool Administator::SetModerator(OrdinaryUser* o)
+Moderator* Administator::SetModerator(OrdinaryUser* o, Board * const b)
 {
 	/*运行时类型识别，dynamic_cast用来在运行时转换类型（基类对象指针无法自动转换为派生类）
 	if (Moderator* ordinaryUser = dynamic_cast<Moderator*> (o)) {
@@ -26,15 +26,16 @@ bool Administator::SetModerator(OrdinaryUser* o)
 	}*/
 
 	//基类OrdinaryUser转化为派生类Moderator
-	OrdinaryUser * temp = o;
-	o = new Moderator;
+	Moderator* m = new Moderator;
 	//将基类的属性拷贝到派生类中
-	o->SetId(temp->GetId());
-	o->SetPassword(temp->GetPassword());
-	o->SetUserName(temp->GetUserName());
-	o->SetOnline(temp->GetOnline());
-	
-	return true;
+	m->SetId(o->GetId());
+	m->SetOnline(o->GetOnline());
+	m->SetPassword(o->GetPassword());
+	m->SetPassword(o->GetUserName());
+	//设置版主管理的版块
+	m->SetBoard(b);
+
+	return m;
 }
 
 bool Administator::RepealModerator(OrdinaryUser * m)

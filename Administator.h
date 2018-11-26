@@ -14,7 +14,7 @@ private:
 public:
 	Administator();
 	~Administator();
-	bool SetModerator(OrdinaryUser* o);
+	Moderator* SetModerator(OrdinaryUser* o,Board* const b);
 	bool RepealModerator(OrdinaryUser* o);
 
 };

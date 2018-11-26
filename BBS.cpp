@@ -38,7 +38,7 @@ User * BBS::GetUser(const string & name)
 	return nullptr;
 }
 
-bool BBS::SignUp()
+bool BBS::SignUp(User * user)
 {
 	cout << "用户注册：" << endl;
 
@@ -55,10 +55,9 @@ bool BBS::SignUp()
 		}
 	}
 	//无重复用户，可以注册
-	User* user = new User(name, password);
+	user = new User(name, password);
 	users.push_back(user);		//加入BBS以注册用户列表队列
 	user->SetId(users.size());	//把用户序号作为Id
-
 	cout << "注册成功！" << endl;
 	return true;
 }
@@ -81,3 +80,42 @@ bool BBS::Logout(const int id)
 	cout << "该用户不存在，无法注销！" << endl;
 	return false;
 }
+
+bool BBS::AddBoard(Board * b)
+{
+	cout << "添加版块:" << endl;
+
+	string title;
+	cout << "请设置版块名：" << endl;
+	cin >> title;
+
+	for (auto bo : boards) {
+		if (bo->GetName() == title) {
+			cout << "该版块以存在，添加失败！" << endl;
+			return false;
+		}
+	}
+
+	b = new Board(title);
+	boards.push_back(b);
+	b->SetId(boards.size());
+	cout << "该版块添加成功！" << endl;
+	return true;
+}
+
+bool BBS::DeleteBoard(Board * b)
+{
+	cout << "删除版块：" << endl;
+
+	for (auto bo : boards) {
+		if (b == bo) {
+			if (!b)
+				delete b;
+			cout << "删除成功！" << endl;
+			return true;
+		}
+	}
+	cout << "该版块不存在，删除失败！" << endl;
+	return false;
+}
+

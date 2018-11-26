@@ -19,13 +19,13 @@ public:
 	//虚析构函数，User作为基类应该定义一个虚析构函数来动态分配继承体系中的对象
 	virtual ~User();
 	int GetId() { return id; }
-	void SetId(int id) { this->id = id; }
+	void SetId(const int id) { this->id = id; }
 	string GetPassword() { return password; }
-	void SetPassword(string pw) { password = pw; }
+	void SetPassword(const string pw) { password = pw; }
 	string GetUserName() { return userName; }
-	void SetUserName(string un) { userName = un; }
+	void SetUserName(const string un) { userName = un; }
 	bool GetOnline() { return online; }
-	void SetOnline(bool online) { this->online = online; }
+	void SetOnline(const bool online) { this->online = online; }
 	//用户登录，返回是否登录成功  /*传入常量，需要用到常量引用*/
 	bool SignIn();
 	//用户退出，返回是否退出成功（不退出也算true）
