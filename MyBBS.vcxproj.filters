@@ -24,6 +24,15 @@
     <ClInclude Include="Administator.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="OrdinaryUser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Moderator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Board.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BBS.cpp">
@@ -36,6 +45,15 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Administator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="OrdinaryUser.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Moderator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Board.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -24,6 +24,8 @@ public:
 	void SetPassword(string pw) { password = pw; }
 	string GetUserName() { return userName; }
 	void SetUserName(string un) { userName = un; }
+	bool GetOnline() { return online; }
+	void SetOnline(bool online) { this->online = online; }
 	//用户登录，返回是否登录成功  /*传入常量，需要用到常量引用*/
 	bool SignIn();
 	//用户退出，返回是否退出成功（不退出也算true）

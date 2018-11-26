@@ -144,12 +144,18 @@
   <ItemGroup>
     <ClInclude Include="Administator.h" />
     <ClInclude Include="BBS.h" />
+    <ClInclude Include="Moderator.h" />
+    <ClInclude Include="OrdinaryUser.h" />
+    <ClInclude Include="Board.h" />
     <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Administator.cpp" />
     <ClCompile Include="BBS.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Moderator.cpp" />
+    <ClCompile Include="OrdinaryUser.cpp" />
+    <ClCompile Include="Board.cpp" />
     <ClCompile Include="User.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
